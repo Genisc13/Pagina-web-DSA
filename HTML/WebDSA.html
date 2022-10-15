@@ -21,10 +21,10 @@
       alert("Usuario introducido: " + nombre);
 
       $.get("https://api.github.com/users/"+nombre+"/repos", function(data, status){
-        alert("Data: " + JSON.stringify(data[0].name ) + ", "+ JSON.stringify(data[0].description )+", "+ JSON.stringify(data[0].size)+ "\nStatus: " + status);
+        alert("Data: " + JSON.stringify(data[0].name ) + ", "+ JSON.stringify(data[0].description )+", "+ JSON.stringify(data[0].stargazers_count)+ "\nStatus: " + status);
 
         for(p=0;p<data.length;p++){
-          $("#cuertabla").append("<tr>" + "<td>"+JSON.stringify(data[p].name ) +"</td>"+"<td>"+JSON.stringify(data[p].description ) +"</td>"+"<td>"+JSON.stringify(data[p].size ) +"</td>" +"</tr>");
+          $("#cuertabla").append("<tr>" + "<td>"+JSON.stringify(data[p].name ) +"</td>"+"<td>"+JSON.stringify(data[p].description ) +"</td>"+"<td>"+JSON.stringify(data[p].stargazers_count) +"</td>" +"</tr>");
         }
       });
 
@@ -49,7 +49,7 @@
     <tr>
       <th>Firstname</th>
       <th>Description</th>
-      <th>size</th>
+      <th>Stargazers_count</th>
     </tr>
     </thead>
     <tbody id="cuertabla">
