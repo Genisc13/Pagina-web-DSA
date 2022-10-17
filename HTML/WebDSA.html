@@ -27,12 +27,11 @@
           $("#cuertabla").append("<tr>" + "<td>"+JSON.stringify(data[p].name ) +"</td>"+"<td>"+JSON.stringify(data[p].description ) +"</td>"+"<td>"+JSON.stringify(data[p].stargazers_count) +"</td>" +"</tr>");
         }
       });
-
+      $("#Tabla").show();
     }
     function clickea(){
       $("#Tabla").hide();
       $("button").click(cogeValue);
-      $("#Tabla").show();
     }
     $(document).ready(clickea);
   </script>
@@ -44,7 +43,7 @@
   <p>Name: <input type="text" id="test" value="Genisc13"></p>
   <button>Get Value</button>
 
-  <table id="Tabla" className="table table-striped">
+  <table id="Tabla" class="table table-striped">
     <thead>
     <tr>
       <th>Firstname</th>
